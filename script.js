@@ -15,3 +15,10 @@ class ProductProperties {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 }
+
+class PerishableProductProperties extends ProductProperties{
+    constructor(name, price, quantity, expirationDate){
+        
+    }
+
+}
