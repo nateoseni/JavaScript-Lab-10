@@ -32,7 +32,7 @@ class PerishableProductProperties extends ProductProperties{
         super(name, price, quantity);
         this.expirationDate = expirationDate;
     }
-    
+
     //override toString to include the expiration date property
     toString() {
         return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
@@ -48,5 +48,11 @@ console.log(glue.toString());
 console.log(`Total Glue Value: $${glue.getTotalValue()}`);
 
 console.log(balloon.toString());
-console.log(`Total Balloon Value: $${balloon.getTotalValue()}`)
+console.log(`Total Balloon Value: $${balloon.getTotalValue()}`);
 
+
+class StoreProducts {
+    constructor(){
+        this.inventory = [];
+    }
+}
