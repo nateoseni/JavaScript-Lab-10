@@ -18,7 +18,12 @@ class ProductProperties {
 
 class PerishableProductProperties extends ProductProperties{
     constructor(name, price, quantity, expirationDate){
-        
+        super(name, price, quantity);
+        this.expirationDate = expirationDate;
     }
-
+    toString() {
+        return '${super.toString()}, Expiration Date: ${this.expirationDate}';
+    }
 }
+
+//create two instances of this class with sample data
