@@ -52,7 +52,15 @@ console.log(`Total Balloon Value: $${balloon.getTotalValue()}`);
 
 
 class StoreProducts {
+
+    //initialize a constructor and an empty inventory array to store products
     constructor(){
         this.inventory = [];
     }
+
+    //add a product to the end of the inventory array using push
+    addProduct(product){
+        this.inventory.push(product);
+    }
+
 }
