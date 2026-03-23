@@ -14,6 +14,13 @@ class ProductProperties {
     toString() {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
+    
+    //static method to apply dictounts to products
+    static applyDiscount(products, discount){
+        products.forEach(product => {
+            product.price -= product.price * discount;
+        });
+    }
 }
 
 class PerishableProductProperties extends ProductProperties{
@@ -36,3 +43,4 @@ console.log(`Total Glue Value: $${glue.getTotalValue()}`);
 
 console.log(balloon.toString());
 console.log(`Total Balloon Value: $${balloon.getTotalValue()}`)
+
