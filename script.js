@@ -22,8 +22,17 @@ class PerishableProductProperties extends ProductProperties{
         this.expirationDate = expirationDate;
     }
     toString() {
-        return '${super.toString()}, Expiration Date: ${this.expirationDate}';
+        return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
     }
 }
 
-//create two instances of this class with sample data
+// Create two instances of this class with sample data and test output
+
+const glue = new PerishableProductProperties("Glue", 2.23, 4, "03/23/2026");
+const balloon = new PerishableProductProperties("Balloon", 1.50, 10, "10/25/2026");
+
+console.log(glue.toString());
+console.log(`Total Glue Value: $${glue.getTotalValue()}`);
+
+console.log(balloon.toString());
+console.log(`Total Balloon Value: $${balloon.getTotalValue()}`)
