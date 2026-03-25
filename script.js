@@ -63,4 +63,8 @@ class StoreProducts {
         this.inventory.push(product);
     }
 
+    //use reduce on the inventory array to produce a single value for the products
+    getInventoryValue(){
+        this.inventory.reduce(total, product);
+    }
 }
