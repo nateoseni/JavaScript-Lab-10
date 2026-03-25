@@ -65,6 +65,16 @@ class StoreProducts {
 
     //use reduce on the inventory array to produce a single value for the products
     getInventoryValue(){
-        this.inventory.reduce(total, product);
+        this.inventory.reduce((total, product) => {
+            return total + product.getTotalValue();
+        }, 0); // the 0 is the initial value before adding the products in reduce
     }
+
+    //use the find array search method to see which product matches the name
+    findProductByName(name) {
+        const findProduct = this.inventory.find(product => product.name === name); //compare each product with the name variable until it matches
+        return findProduct || null; //return the found product or null
+    }
+
+
 }
