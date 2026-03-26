@@ -20,7 +20,7 @@ class ProductProperties {
     //static method to apply dictounts to products
     static applyDiscount(products, discount){
         products.forEach(product => {
-            product.price -= product.price * discount;
+            product.price -= product.price * discount; //or  product.price *= (1 - discount); (both would work)
         });
     }
 }
