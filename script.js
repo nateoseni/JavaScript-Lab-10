@@ -65,7 +65,7 @@ class StoreProducts {
 
     //use reduce on the inventory array to produce a single value for the products
     getInventoryValue(){
-        this.inventory.reduce((total, product) => {
+        return this.inventory.reduce((total, product) => {
             return total + product.getTotalValue();
         }, 0); // the 0 is the initial value before adding the products in reduce
     }
@@ -76,5 +76,40 @@ class StoreProducts {
         return findProduct || null; //return the found product or null
     }
 
-
 }
+
+//Testing 
+
+const storeTest = new StoreProducts();
+
+//create perishable products
+const eggs = new PerishableProductProperties("Eggs", 1.50, 12, "3/25/2026");
+const milk = new PerishableProductProperties("Milk", 6.50, 3, "12/15/2027");
+const cream = new PerishableProductProperties("Cream", 4.75, 7, "4/12/2026");
+//create products
+const lightsaber = new ProductProperties("Lightsaber", 50.25, 13);
+const jeans = new ProductProperties("Jeans", 20.25, 2)
+
+
+//add to store object
+storeTest.addProduct(eggs);
+storeTest.addProduct(lightsaber);
+storeTest.addProduct(cream);
+storeTest.addProduct(lightsaber);
+storeTest.addProduct(jeans);
+
+//inventory value before discount
+console.log("Before Discount: ");
+//use for each to go through all of the products in the store's inventory and print
+storeTest.inventory.forEach(product => console.log(product.toString()));
+
+//apply discount
+ProductProperties.applyDiscount(storeTest.inventory, 0.15);
+
+
+// total value after discount
+console.log("After Discount: ");
+//loop through the array again and print out products after discount has been applied
+storeTest.inventory.forEach(product => console.log(product.toString()));
+//print total inventory value
+console.log("Total Inventory Value: $" + storeTest.getInventoryValue().toFixed(2));
