@@ -72,7 +72,7 @@ class StoreProducts {
 
     //use the find array search method to see which product matches the name
     findProductByName(name) {
-        const findProduct = this.inventory.find(product => product.name === name); //compare each product with the name variable until it matches
+        const findProduct = this.inventory.find(product => product.name.toLowerCase() === name.toLowerCase()); //compare each product with the name variable until it matches
         return findProduct || null; //return the found product or null
     }
 
@@ -118,7 +118,7 @@ console.log("Total Inventory Value: $" + storeTest.getInventoryValue().toFixed(2
 const search = storeTest.findProductByName("Lightsaber");
 const search2 = storeTest.findProductByName("Redbull");
 
-//if statement for if the product does not exist
+//if statements for if the product does not exist
 if (search) {
     console.log(search.toString());  
 } else {
