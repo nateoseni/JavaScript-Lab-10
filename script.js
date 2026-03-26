@@ -93,8 +93,8 @@ const jeans = new ProductProperties("Jeans", 20.25, 2)
 
 //add to store object
 storeTest.addProduct(eggs);
-storeTest.addProduct(lightsaber);
 storeTest.addProduct(cream);
+storeTest.addProduct(milk);
 storeTest.addProduct(lightsaber);
 storeTest.addProduct(jeans);
 
@@ -113,3 +113,13 @@ console.log("After Discount: ");
 storeTest.inventory.forEach(product => console.log(product.toString()));
 //print total inventory value
 console.log("Total Inventory Value: $" + storeTest.getInventoryValue().toFixed(2));
+
+//test finding products by name
+const search = storeTest.findProductByName("Lightsaber");
+
+//if statement for if the product does not exist
+if (search) {
+    console.log(search.toString());  
+} else {
+    console.log("Product not found");
+}
