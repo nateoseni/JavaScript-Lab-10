@@ -116,10 +116,17 @@ console.log("Total Inventory Value: $" + storeTest.getInventoryValue().toFixed(2
 
 //test finding products by name
 const search = storeTest.findProductByName("Lightsaber");
+const search2 = storeTest.findProductByName("Redbull");
 
 //if statement for if the product does not exist
 if (search) {
     console.log(search.toString());  
+} else {
+    console.log("Product not found");
+}
+
+if (search2) {
+    console.log(search2.toString());  
 } else {
     console.log("Product not found");
 }
